@@ -11,7 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        //
+        Schema::create('rapport', function (Blueprint $table) {
+            $table->id();
+            $table->string('contenu');
+            $table->date('date_rapport');
+            $table->timestamps();
+        });
     }
 
     /**
@@ -19,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        //
+        Schema::dropIfExists('rapport');
     }
 };

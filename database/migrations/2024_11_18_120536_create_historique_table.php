@@ -11,7 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        //
+        Schema::create('historique', function (Blueprint $table) {
+            $table->id();
+            $table->string('action');
+            $table->date('date_action');
+            $table->string('id_user');
+            $table->string('id_doc');
+            $table->timestamps();
+        });
     }
 
     /**
@@ -19,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        //
+        Schema::dropIfExists('historique');
     }
 };
