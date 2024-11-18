@@ -18,6 +18,7 @@ return new class extends Migration
             $table->date('date_embauche');
             $table->string('type_contrat');
             $table->string('id_service');
+            $table->string('role');
             $table->timestamps();
         });
     }
